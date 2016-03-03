@@ -217,7 +217,7 @@ module.exports = function(grunt) {
 
         if (options.commonjs) {
           if (useNamespace) {
-            output.push('return ' + nsInfo.namespace + ';');
+            output.push('return ' + extractGlobalNamespace(nsDeclarations) + ';');
           } else {
             output.unshift('var templates = {};');
             output.push('return templates;');
